@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtUser2 = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.cbKieuChoi = new System.Windows.Forms.ComboBox();
             this.txtMuc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnOK
@@ -184,6 +186,7 @@
             this.txtMuc.TabIndex = 23;
             this.txtMuc.TextChanged += new System.EventHandler(this.txtMuc_TextChanged);
             this.txtMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMuc_KeyPress);
+            this.txtMuc.MouseHover += new System.EventHandler(this.txtMuc_MouseHover);
             // 
             // label6
             // 
@@ -244,5 +247,6 @@
         private System.Windows.Forms.ComboBox cbKieuChoi;
         private System.Windows.Forms.TextBox txtMuc;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

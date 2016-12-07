@@ -57,10 +57,8 @@ namespace GameCaro
             { 
             if ((Int32.Parse(txtMuc.Text)<1 || Int32.Parse(txtMuc.Text) > 60) && txtMuc.Enabled==true)
             {
-                MessageBox.Show("Thời gian trong khoảng 1->60s!!!","LỖI",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
+                    toolTip1.Show("Giá trị từ 1->60!!!", txtMuc);
+                }
             else
             {
             // gửi user name qua FormMAIN        
@@ -105,6 +103,11 @@ namespace GameCaro
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void txtMuc_MouseHover(object sender, EventArgs e)
+        {
+           // toolTip1.Show("Giá trị từ 1->60!!!",txtMuc);
         }
     }
 }
