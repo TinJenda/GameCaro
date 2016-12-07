@@ -37,6 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUser1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbKieuChoi = new System.Windows.Forms.ComboBox();
+            this.txtMuc = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOK
@@ -45,7 +49,7 @@
             this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOK.Font = new System.Drawing.Font("UTM Caviar", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Maroon;
-            this.btnOK.Location = new System.Drawing.Point(47, 200);
+            this.btnOK.Location = new System.Drawing.Point(60, 287);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(93, 37);
             this.btnOK.TabIndex = 10;
@@ -60,7 +64,7 @@
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Font = new System.Drawing.Font("UTM Caviar", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCancel.Location = new System.Drawing.Point(168, 200);
+            this.btnCancel.Location = new System.Drawing.Point(212, 287);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
             this.btnCancel.TabIndex = 11;
@@ -72,10 +76,10 @@
             // txtUser2
             // 
             this.txtUser2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser2.Location = new System.Drawing.Point(168, 105);
+            this.txtUser2.Location = new System.Drawing.Point(169, 97);
             this.txtUser2.Multiline = true;
             this.txtUser2.Name = "txtUser2";
-            this.txtUser2.Size = new System.Drawing.Size(118, 26);
+            this.txtUser2.Size = new System.Drawing.Size(173, 26);
             this.txtUser2.TabIndex = 13;
             // 
             // label1
@@ -96,7 +100,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(26, 105);
+            this.label2.Location = new System.Drawing.Point(27, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 23);
             this.label2.TabIndex = 15;
@@ -106,10 +110,10 @@
             // 
             this.cbuser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbuser.Location = new System.Drawing.Point(212, 154);
+            this.cbuser.Location = new System.Drawing.Point(212, 143);
             this.cbuser.MaxDropDownItems = 2;
             this.cbuser.Name = "cbuser";
-            this.cbuser.Size = new System.Drawing.Size(74, 28);
+            this.cbuser.Size = new System.Drawing.Size(130, 28);
             this.cbuser.TabIndex = 16;
             this.cbuser.SelectedIndexChanged += new System.EventHandler(this.cbuser_SelectedIndexChanged);
             this.cbuser.Click += new System.EventHandler(this.comboBox1_Click);
@@ -120,7 +124,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(25, 154);
+            this.label3.Location = new System.Drawing.Point(25, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(181, 23);
             this.label3.TabIndex = 17;
@@ -144,15 +148,65 @@
             this.txtUser1.Location = new System.Drawing.Point(168, 49);
             this.txtUser1.Multiline = true;
             this.txtUser1.Name = "txtUser1";
-            this.txtUser1.Size = new System.Drawing.Size(118, 26);
+            this.txtUser1.Size = new System.Drawing.Size(174, 26);
             this.txtUser1.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(26, 192);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 23);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Chọn kiểu chơi:";
+            // 
+            // cbKieuChoi
+            // 
+            this.cbKieuChoi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKieuChoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKieuChoi.Location = new System.Drawing.Point(168, 192);
+            this.cbKieuChoi.MaxDropDownItems = 2;
+            this.cbKieuChoi.Name = "cbKieuChoi";
+            this.cbKieuChoi.Size = new System.Drawing.Size(174, 28);
+            this.cbKieuChoi.TabIndex = 20;
+            this.cbKieuChoi.SelectedIndexChanged += new System.EventHandler(this.cbKieuChoi_SelectedIndexChanged);
+            // 
+            // txtMuc
+            // 
+            this.txtMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMuc.Location = new System.Drawing.Point(168, 240);
+            this.txtMuc.Multiline = true;
+            this.txtMuc.Name = "txtMuc";
+            this.txtMuc.Size = new System.Drawing.Size(173, 26);
+            this.txtMuc.TabIndex = 23;
+            this.txtMuc.TextChanged += new System.EventHandler(this.txtMuc_TextChanged);
+            this.txtMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMuc_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("UTM Bienvenue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(24, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 23);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Nhập time:";
             // 
             // NewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GameCaro.Properties.Resources.Light_Abstract__18_;
-            this.ClientSize = new System.Drawing.Size(314, 253);
+            this.ClientSize = new System.Drawing.Size(368, 336);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMuc);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbKieuChoi);
             this.Controls.Add(this.txtUser1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -186,5 +240,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUser1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbKieuChoi;
+        private System.Windows.Forms.TextBox txtMuc;
+        private System.Windows.Forms.Label label6;
     }
 }

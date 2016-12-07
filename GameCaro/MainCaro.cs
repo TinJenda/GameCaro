@@ -10,23 +10,27 @@ using System.Windows.Forms;
 
 namespace GameCaro
 {
-    public delegate void SendUsername(string Username1, string Username2, string Userfirst);
+    public delegate void SendUsername(string Username1, string Username2, string Userfirst, string Kieuchoi,String Muc);
     
     public partial class MainCaro : Form
     {
         public string user1;
         public string user2;
+        public string kieuchoi;
         public string userfirst;
         public string userWin;
+        public string muc;
         TaoBanCo BanCo;
-        public void setValue(string Username1, string Username2, string Userfirst)
+        public void setValue(string Username1, string Username2, string Userfirst, string Kieuchoi, string Muc)
         {
             // ten mà muốn hiển thị ở frm chính (txtUs1: textBox mình đặt tên)
             //user1 = Username1.ToUpper();
             //user2 = Username2.ToUpper();
             user1 = Username1;
             user2 = Username2;
+            kieuchoi = Kieuchoi;
             userfirst = Userfirst;
+            muc = Muc;
         }
 
         public MainCaro()
@@ -58,7 +62,7 @@ namespace GameCaro
                 userWin = user1;
             }
             TaoBanCo banco = new TaoBanCo();
-                    MessageBox.Show("NGƯỜI CHƠI " + userWin + " THẮNG SAU " + dem + " LƯỢT CHƠI!", "WINNNNN",
+                    MessageBox.Show("Người chơi " + userWin + " thắng sau " + dem + " lượt chơi!", "WINNNNN",
                       MessageBoxButtons.OK,
                       MessageBoxIcon.Information);
             // DialogResult traloi = (MessageBox.Show("BẠN MUỐN ĐẤU LẠI HAY KHÔNG", "THÔNG BÁO",
@@ -79,7 +83,14 @@ namespace GameCaro
         }   
         private void BanCo_PlayerClickEvent(object sender, EventArgs e)
         {
-            Timer_Time.Start();
+            if (kieuchoi == "Không đếm giờ")
+            {
+                Timer_Time.Stop();
+            }
+            else
+            {
+                  Timer_Time.Start();
+            }
             prcbTime.Value = 0;
             dem++;
             if (UserName.Text == user1)
@@ -101,6 +112,7 @@ namespace GameCaro
         {
             pnlBanCo.Enabled = false;
             userImage.Visible = false;
+            btnPause.Enabled = false;
         }
 
         private void Timer_Time_Tick(object sender, EventArgs e)
@@ -126,7 +138,7 @@ namespace GameCaro
             else
             {
                 UserName.Text = user2;
-            }
+            }    
             prcbTime.Value = 0;
             Timer_Time.Stop();
             BanCo.veBanCo();
@@ -136,7 +148,17 @@ namespace GameCaro
 
         private void btnNewGame_Click(object sender, EventArgs e)
         { 
-            NewGame();
+            if(kieuchoi=="Đếm giờ")
+            {
+                NewGame();
+                prcbTime.Maximum = Int32.Parse(muc) * 1000;
+                btnPause.Text = "Pause";
+            }
+            else
+            {
+                NewGame();
+                btnPause.Text = "Pause";
+            }
         }
 
         private void MainCaro_FormClosing(object sender, FormClosingEventArgs e)
@@ -248,6 +270,7 @@ namespace GameCaro
             frmNG.ShowDialog();
             pnlBanCo.Enabled = false;
             btnPause.Enabled = false;
+            btnNewGame.Enabled = true;
         }
     }
 }

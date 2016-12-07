@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainCaro));
             this.pnlBanCo = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.UserName = new System.Windows.Forms.TextBox();
             this.btnSetName = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.Timer_Time = new System.Windows.Forms.Timer(this.components);
             this.time_label = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.UserName = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
@@ -80,6 +80,15 @@
             this.panel3.Size = new System.Drawing.Size(247, 259);
             this.panel3.TabIndex = 2;
             // 
+            // UserName
+            // 
+            this.UserName.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.Location = new System.Drawing.Point(60, 5);
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            this.UserName.Size = new System.Drawing.Size(99, 29);
+            this.UserName.TabIndex = 14;
+            // 
             // btnSetName
             // 
             this.btnSetName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -90,7 +99,7 @@
             this.btnSetName.Name = "btnSetName";
             this.btnSetName.Size = new System.Drawing.Size(115, 36);
             this.btnSetName.TabIndex = 13;
-            this.btnSetName.Text = "Đặt lại";
+            this.btnSetName.Text = "Tùy chọn";
             this.btnSetName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSetName.UseVisualStyleBackColor = false;
             this.btnSetName.Click += new System.EventHandler(this.btnSetName_Click_1);
@@ -142,6 +151,7 @@
             // 
             this.btnNewGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewGame.Enabled = false;
             this.btnNewGame.Font = new System.Drawing.Font("UTM Caviar", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.ForeColor = System.Drawing.Color.Maroon;
             this.btnNewGame.Location = new System.Drawing.Point(6, 128);
@@ -230,15 +240,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(247, 248);
             this.panel2.TabIndex = 1;
-            // 
-            // UserName
-            // 
-            this.UserName.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserName.Location = new System.Drawing.Point(60, 5);
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            this.UserName.Size = new System.Drawing.Size(99, 29);
-            this.UserName.TabIndex = 14;
             // 
             // MainCaro
             // 
