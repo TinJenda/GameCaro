@@ -99,7 +99,7 @@
             this.btnSetName.Name = "btnSetName";
             this.btnSetName.Size = new System.Drawing.Size(115, 36);
             this.btnSetName.TabIndex = 13;
-            this.btnSetName.Text = "Tùy chọn";
+            this.btnSetName.Text = "Option";
             this.btnSetName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSetName.UseVisualStyleBackColor = false;
             this.btnSetName.Click += new System.EventHandler(this.btnSetName_Click_1);
