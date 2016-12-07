@@ -44,11 +44,9 @@ namespace GameCaro
 
         private void btnOK_Click_1(object sender, EventArgs e)
         {
-           
               // gửi user name qua FormMAIN
-                this.send(txtUser1.Text, txtUser2.Text, cbuser.Text);
-            
-                this.Close();
+              this.send(txtUser1.Text, txtUser2.Text, cbuser.Text);
+              this.Close();
         }
 
         private void cbuser_SelectedIndexChanged(object sender, EventArgs e)

@@ -30,3 +30,13 @@ C:\Users\TinCz\Desktop\ok\GameCaro\GameCaro\obj\Debug\GameCaro.MainCaro.resource
 C:\Users\TinCz\Desktop\ok\GameCaro\GameCaro\obj\Debug\GameCaro.NewGame.resources
 C:\Users\TinCz\Desktop\ok\GameCaro\GameCaro\obj\Debug\GameCaro.Properties.Resources.resources
 C:\Users\TinCz\Desktop\ok\GameCaro\GameCaro\obj\Debug\GameCaro.csproj.GenerateResource.Cache
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\bin\Debug\GameCaro.exe.config
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.exe
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.pdb
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\bin\Debug\GameCaro.exe
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\bin\Debug\GameCaro.pdb
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.csprojResolveAssemblyReference.cache
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.MainCaro.resources
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.NewGame.resources
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.Properties.Resources.resources
+C:\Users\TinCz\Desktop\GameCaro-master\GameCaro\obj\Debug\GameCaro.csproj.GenerateResource.Cache

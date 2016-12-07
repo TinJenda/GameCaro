@@ -22,8 +22,10 @@ namespace GameCaro
         public void setValue(string Username1, string Username2, string Userfirst)
         {
             // ten mà muốn hiển thị ở frm chính (txtUs1: textBox mình đặt tên)
-            user1 = Username1.ToUpper();
-            user2 = Username2.ToUpper();
+            //user1 = Username1.ToUpper();
+            //user2 = Username2.ToUpper();
+            user1 = Username1;
+            user2 = Username2;
             userfirst = Userfirst;
         }
 
@@ -44,10 +46,10 @@ namespace GameCaro
         }
         int dem = 0;
         private void EndGame()
-        {
-
+        { 
             Timer_Time.Stop();
-            if(User1.Text==user1)
+            btnPause.Enabled = false;
+            if(UserName.Text==user1)
             {
                 userWin = user2;
             }
@@ -58,34 +60,35 @@ namespace GameCaro
             TaoBanCo banco = new TaoBanCo();
                     MessageBox.Show("NGƯỜI CHƠI " + userWin + " THẮNG SAU " + dem + " LƯỢT CHƠI!", "WINNNNN",
                       MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);   
-                     DialogResult traloi = (MessageBox.Show("BẠN MUỐN ĐẤU LẠI HAY KHÔNG", "THÔNG BÁO",
-                     MessageBoxButtons.YesNo,
-                     MessageBoxIcon.Question));
-                    if (traloi == DialogResult.Yes)
-                    {
-                        NewGame();
-                    }
-                    else
-                    {
-                        pnlBanCo.Enabled = false;
-                        dem = 0;
-                     }
-            
-        }
-     
+                      MessageBoxIcon.Information);
+            // DialogResult traloi = (MessageBox.Show("BẠN MUỐN ĐẤU LẠI HAY KHÔNG", "THÔNG BÁO",
+            // MessageBoxButtons.YesNo,
+            // MessageBoxIcon.Question));
+            //if (traloi == DialogResult.Yes)
+            //{
+            //    NewGame();
+            //}
+            //else
+            //{
+            //    pnlBanCo.Enabled = false;
+            //    dem = 0;
+            // }
+            pnlBanCo.Enabled = false;
+            dem = 0;
+
+        }   
         private void BanCo_PlayerClickEvent(object sender, EventArgs e)
         {
             Timer_Time.Start();
             prcbTime.Value = 0;
             dem++;
-            if (User1.Text == user1)
+            if (UserName.Text == user1)
             {
-                User1.Text = user2;
+                UserName.Text = user2;
             }
             else
             {
-                User1.Text = user1;
+                UserName.Text = user1;
             }
         }
 
@@ -97,6 +100,7 @@ namespace GameCaro
         private void Form1_Load(object sender, EventArgs e)
         {
             pnlBanCo.Enabled = false;
+            userImage.Visible = false;
         }
 
         private void Timer_Time_Tick(object sender, EventArgs e)
@@ -117,21 +121,21 @@ namespace GameCaro
         {
             if(userfirst== "User 1")
             {
-                User1.Text = user1;
+                UserName.Text = user1;
             }
             else
             {
-                User1.Text = user2;
+                UserName.Text = user2;
             }
             prcbTime.Value = 0;
             Timer_Time.Stop();
             BanCo.veBanCo();
+            btnPause.Enabled = true;
+            userImage.Visible = true;
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
-        {
-            NewGame frmNG = new NewGame(setValue);
-            frmNG.ShowDialog();
+        { 
             NewGame();
         }
 
@@ -188,6 +192,62 @@ namespace GameCaro
             //    btnFirst.Width = 0;
             //    btnFirst.Height = 0;
             //}
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) //phím tắt
+        {
+            switch (keyData)
+            {
+                case (Keys.Control | Keys.N):
+                    btnNewGame_Click(null, null);
+                    return true;
+                case (Keys.Control | Keys.P):
+                    btnPause_Click(null, null);
+                    return true;
+                case (Keys.Control | Keys.U):
+
+                    return true;
+                case (Keys.Control | Keys.Q):
+                    Application.Exit();
+                    return true;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            if(btnPause.Text=="Pause")
+            {
+                pnlBanCo.Enabled = false;
+                btnPause.Text = "Resume";
+                Timer_Time.Stop();
+                // temp = prcbTime.Value;
+            }
+            else
+            if (btnPause.Text == "Resume")
+            {
+                pnlBanCo.Enabled = true;
+                btnPause.Text = "Pause";
+             //   prcbTime.Value = temp;
+                Timer_Time.Start();
+            };
+           
+        }
+
+    
+
+        private void btnSetName_Click_1(object sender, EventArgs e)
+        {
+            Timer_Time.Stop();
+            NewGame frmNG = new NewGame(setValue);
+            frmNG.ShowDialog();
+            pnlBanCo.Enabled = false;
+            btnPause.Enabled = false;
         }
     }
 }

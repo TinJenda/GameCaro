@@ -113,6 +113,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Light_Abstract__39_ {
+            get {
+                object obj = ResourceManager.GetObject("Light Abstract (39)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Light_Abstract__43_ {
             get {
                 object obj = ResourceManager.GetObject("Light Abstract (43)", resourceCulture);
