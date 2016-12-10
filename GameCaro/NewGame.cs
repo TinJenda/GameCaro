@@ -27,6 +27,7 @@ namespace GameCaro
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+           
         }
 
         private void NewGame_Load(object sender, EventArgs e)

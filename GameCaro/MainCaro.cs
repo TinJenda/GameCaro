@@ -273,8 +273,8 @@ namespace GameCaro
             Timer_Time.Stop();
             NewGame frmNG = new NewGame(setValue);
             frmNG.ShowDialog();
-            pnlBanCo.Enabled = false;
-            btnPause.Enabled = false;
+            //pnlBanCo.Enabled = false;
+            //btnPause.Enabled = true;
             btnNewGame.Enabled = true;
         }
 
