@@ -48,23 +48,31 @@ namespace GameCaro
 
         private void btnOK_Click_1(object sender, EventArgs e)
         {
-            if(txtMuc.Text==""|| txtMuc.Text == null)
+            if(cbKieuChoi.Text=="Đếm giờ")
             {
-                this.send(txtUser1.Text, txtUser2.Text, cbuser.Text, cbKieuChoi.Text, txtMuc.Text);
-                this.Close();
-            }
-            else
-            { 
-            if ((Int32.Parse(txtMuc.Text)<1 || Int32.Parse(txtMuc.Text) > 60) && txtMuc.Enabled==true)
-            {
-                    toolTip1.Show("Giá trị từ 1->60!!!", txtMuc);
+                if (txtMuc.Text == "" || txtMuc.Text == null)
+                {
+                    toolTip1.Show("Nhập time <s>!!!", txtMuc);
                 }
+                else
+                {
+                    if ((Int32.Parse(txtMuc.Text) < 1 || Int32.Parse(txtMuc.Text) > 60) && txtMuc.Enabled == true)
+                    {
+                        toolTip1.Show("Giá trị từ 1->60!!!", txtMuc);
+                    }
+                    else
+                    {
+                        this.send(txtUser1.Text, txtUser2.Text, cbuser.Text, cbKieuChoi.Text, txtMuc.Text);
+                        this.Close();
+                    }
+                }
+           }
             else
             {
             // gửi user name qua FormMAIN        
               this.send(txtUser1.Text, txtUser2.Text, cbuser.Text, cbKieuChoi.Text,txtMuc.Text);
               this.Close();
-            }
+            
             }
         }
 

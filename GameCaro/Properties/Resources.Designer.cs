@@ -63,6 +63,16 @@ namespace GameCaro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _777___Previous_128 {
+            get {
+                object obj = ResourceManager.GetObject("777_-_Previous-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caro {
             get {
                 object obj = ResourceManager.GetObject("caro", resourceCulture);
@@ -126,6 +136,66 @@ namespace GameCaro.Properties {
         internal static System.Drawing.Bitmap Light_Abstract__43_ {
             get {
                 object obj = ResourceManager.GetObject("Light Abstract (43)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newgame {
+            get {
+                object obj = ResourceManager.GetObject("newgame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap options {
+            get {
+                object obj = ResourceManager.GetObject("options", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pause {
+            get {
+                object obj = ResourceManager.GetObject("pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quit {
+            get {
+                object obj = ResourceManager.GetObject("quit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undo {
+            get {
+                object obj = ResourceManager.GetObject("undo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undo__2_ {
+            get {
+                object obj = ResourceManager.GetObject("undo (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -113,6 +113,7 @@ namespace GameCaro
             pnlBanCo.Enabled = false;
             userImage.Visible = false;
             btnPause.Enabled = false;
+      
         }
 
         private void Timer_Time_Tick(object sender, EventArgs e)
@@ -152,12 +153,13 @@ namespace GameCaro
             {
                 NewGame();
                 prcbTime.Maximum = Int32.Parse(muc) * 1000;
-                btnPause.Text = "Pause";
+                btnPause.Text = "Pause"; //khi kích vào có thể đang lúc btn bằng thằng resum... set lại giá trị
             }
             else
             {
                 NewGame();
                 btnPause.Text = "Pause";
+                btnPause.Enabled = false;
             }
         }
 
@@ -248,6 +250,7 @@ namespace GameCaro
                 pnlBanCo.Enabled = false;
                 btnPause.Text = "Resume";
                 Timer_Time.Stop();
+                btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));
                 // temp = prcbTime.Value;
             }
             else
@@ -256,7 +259,9 @@ namespace GameCaro
                 pnlBanCo.Enabled = true;
                 btnPause.Text = "Pause";
              //   prcbTime.Value = temp;
-                Timer_Time.Start();
+             if(kieuchoi=="Đếm giờ")
+                  Timer_Time.Start();
+                btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\pause.png"));
             };
            
         }

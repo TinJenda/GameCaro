@@ -103,6 +103,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
+    <None Include="Resources\undo %282%29.png" />
+    <None Include="Resources\quit.png" />
+    <None Include="Resources\options.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\777_-_Previous-128.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\newgame.png" />
     <None Include="Resources\Light Abstract %2839%29.jpg" />
     <None Include="Resources\Light Abstract %2818%29.jpg" />
     <None Include="Resources\Light Abstract %2843%29.jpg" />
