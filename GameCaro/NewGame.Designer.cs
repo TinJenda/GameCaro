@@ -138,7 +138,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("UTM Ambrose", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(82, 9);
+            this.label4.Location = new System.Drawing.Point(111, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 31);
             this.label4.TabIndex = 18;

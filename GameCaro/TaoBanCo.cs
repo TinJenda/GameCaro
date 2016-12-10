@@ -111,7 +111,7 @@ namespace GameCaro
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = Color.GhostWhite;
                     btn.FlatAppearance.BorderSize = 1;
-                    btn.Name = "btn" + i + "" + j;
+                    btn.Name = "btn" + i.ToString() + "" + j.ToString();
                     btn.FlatAppearance.BorderColor = Color.SteelBlue;
                     btn.FlatAppearance.MouseOverBackColor = Color.PaleTurquoise;
                  //btn.FlatAppearance.MouseDownBackColor = Color.DarkSlateBlue;

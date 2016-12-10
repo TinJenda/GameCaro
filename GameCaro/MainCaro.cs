@@ -193,40 +193,40 @@ namespace GameCaro
         }
         public void btn()
         {
-
-            //for (int i = 0; i < LuuBien.banco_cao; i++)
-            //{
-            //    for (int j = 0; j < LuuBien.banco_rong; j++)
-            //    {
-            //        btn.FlatStyle = FlatStyle.Flat;
-            //        btn.BackColor = Color.GhostWhite;
-            //        btn.FlatAppearance.BorderSize = 1;
-            //        btn.Name = "btn" + i + j;
-            //        btn.FlatAppearance.BorderColor = Color.SteelBlue;
-            //        btn.FlatAppearance.MouseOverBackColor = Color.PaleTurquoise;
-            //        //btn.FlatAppearance.MouseDownBackColor = Color.DarkSlateBlue;
-            //        btn.Click += Btn_Click; //sự kiện click btn
-            //        BanCo1.Controls.Add(btn);
-            //        Matrix[i].Add(btn); //add các button vào mảng
-            //        btnFirst = btn;
-            //    }
-            //    btnFirst.Location = new Point(5, btnFirst.Location.Y + LuuBien.oco_cao); //vẽ tiếp dòng tiếp theo
-            //    btnFirst.Width = 0;
-            //    btnFirst.Height = 0;
-            //}
+            Button btn = new Button();
+            for (int i = 0; i < LuuBien.banco_cao; i++)
+            {
+                for (int j = 0; j < LuuBien.banco_rong; j++)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.BackColor = Color.GhostWhite;
+                    btn.FlatAppearance.BorderSize = 1;
+                    btn.Name = "btn" + i.ToString() + j.ToString();
+                    btn.FlatAppearance.BorderColor = Color.Red;
+                    btn.FlatAppearance.MouseOverBackColor = Color.Red;
+                    //btn.FlatAppearance.MouseDownBackColor = Color.DarkSlateBlue;
+                }
+    
+            }
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData) //phím tắt
         {
+            
             switch (keyData)
             {
                 case (Keys.Control | Keys.N):
-                    btnNewGame_Click(null, null);
+                    if (btnNewGame.Enabled == true)
+                        btnNewGame_Click(null, null);
                     return true;
                 case (Keys.Control | Keys.P):
-                    btnPause_Click(null, null);
+                    if(btnPause.Enabled==true)
+                     btnPause_Click(null, null);
                     return true;
-                case (Keys.Control | Keys.U):
+                case (Keys.Control | Keys.Z):
 
+                    return true;
+                case (Keys.Control | Keys.O):
+                    btnSetName_Click_1(null, null);
                     return true;
                 case (Keys.Control | Keys.Q):
                     Application.Exit();
@@ -272,5 +272,7 @@ namespace GameCaro
             btnPause.Enabled = false;
             btnNewGame.Enabled = true;
         }
+
+        
     }
 }
