@@ -11,6 +11,7 @@ namespace GameCaro
     //public delegate void SendUsername(string Username1, string Username2);
     public class TaoBanCo
     {
+        #region khaibao
         private Panel BanCo;
         public Panel BanCo1
         {
@@ -37,6 +38,8 @@ namespace GameCaro
                 chonNguoiChoi = value;
             }
         }
+       
+        private Stack<Point> taoredo;
         private Stack<Point> lichsuchoi;//ham nay luu toa do, xu ly theo toa do 
 
         public Stack<Point> Lichsuchoi
@@ -51,6 +54,7 @@ namespace GameCaro
                 lichsuchoi = value;
             }
         }
+        #endregion
         public TaoBanCo(Panel BanCo,PictureBox anh)
         {
             this.BanCo1 = BanCo;
@@ -63,6 +67,7 @@ namespace GameCaro
             }; //list player, ở đây 2 người.
 
             lichsuchoi = new Stack<Point>();
+            taoredo = new Stack<Point>();
         }
         public bool undo()
         {
@@ -70,6 +75,7 @@ namespace GameCaro
             {
             Point oldPoint = lichsuchoi.Pop(); //Gỡ bỏ và trả về đối tượng tại trên cùng của Stack
             Button btn = matrix[oldPoint.X][oldPoint.Y];
+            taoredo.Push(oldPoint);
             btn.BackgroundImage = null;
             chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
             doiNguoiChoi();
@@ -78,6 +84,19 @@ namespace GameCaro
            
             return false;
            
+        }
+        public bool redo()
+        {
+            if(taoredo.Count()!=0)
+            {  
+            Point poinredo = taoredo.Pop();
+            Button btn = matrix[poinredo.X][poinredo.Y];
+            doiNguoiChoi();
+            xetNguoiChoi(btn);
+            lichsuchoi.Push(layToaDo(btn));
+            chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
+            }
+            return false;
         }
         public TaoBanCo()
         {
@@ -163,9 +182,8 @@ namespace GameCaro
             xetNguoiChoi(btn); //xem đó là người chơi nào, 1 hay 0
             chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
             doiNguoiChoi(); //đổi người chơi <anh choi>
-           
             lichsuchoi.Push(layToaDo(btn));
-          
+           // taoredo.Push(layToaDo(btn));
             if (playerClickEvent != null)
             {
                 playerClickEvent(this, new EventArgs());
@@ -202,8 +220,19 @@ namespace GameCaro
             }
         }
 
-       
-      
+        public Stack<Point> Taoredo
+        {
+            get
+            {
+                return taoredo;
+            }
+
+            set
+            {
+                taoredo = value;
+            }
+        }
+
         private Point layToaDo(Button btn) //lấy tọa đó btn hiện tại
         {
             int toaDoDoc = Convert.ToInt32(btn.Tag); //tag định nghĩa để lấy i-cao ở trên

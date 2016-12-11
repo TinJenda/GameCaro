@@ -48,7 +48,7 @@ namespace GameCaro
             Timer_Time.Interval = LuuBien.INTERVAL; //số lần để sự kiện timer nhãy
             NewGame();
         }
-        int dem = 0, demUndo = 0;
+        int dem = 0, demUndo = 0,demRedo=0;
         private void EndGame()
         { 
             Timer_Time.Stop();
@@ -79,7 +79,8 @@ namespace GameCaro
             // }
             pnlBanCo.Enabled = false;
             dem = 0;
-
+            demUndo = 0;
+            demRedo = 0;
         }
        
 
@@ -87,20 +88,22 @@ namespace GameCaro
         {
             BanCo.undo();
         }
-        private void BanCo_PlayerClickEvent(object sender, EventArgs e) //sự kiện bàn cờ có người click /rất hay
+        private void BanCo_PlayerClickEvent(object sender, EventArgs e) //sự kiện bàn cờ có người click /rất hay click_
         {
            
-            if (kieuchoi == "Không đếm giờ")
+            if (kieuchoi == "Đếm giờ")
             {
-                Timer_Time.Stop();
+                Timer_Time.Start();
             }
             else
             {
-                  Timer_Time.Start();
+                  Timer_Time.Stop();
             }
             prcbTime.Value = 0;
             dem++;
             demUndo++;
+            demRedo = 0;
+            btnRedo.Enabled = false;
             doiten();
             btnUndo.Enabled = true;
         }
@@ -127,6 +130,7 @@ namespace GameCaro
             userImage.Visible = false;
             btnPause.Enabled = false;
             btnUndo.Enabled = false;
+            btnRedo.Enabled = false;
         }
 
         private void Timer_Time_Tick(object sender, EventArgs e)
@@ -158,10 +162,12 @@ namespace GameCaro
             nguoiChondau();
             prcbTime.Value = 0;
             Timer_Time.Stop();
-            BanCo.veBanCo();
-            btnPause.Enabled = true;
+            BanCo.veBanCo(); 
             userImage.Visible = true;
-
+            btnUndo.Enabled = false;
+            btnRedo.Enabled = false;
+            demRedo = 0;
+            demUndo = 0;
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -172,6 +178,7 @@ namespace GameCaro
                 prcbTime.Maximum = Int32.Parse(muc) * 1000;
                 btnPause.Text = "Pause"; //khi kích vào có thể đang lúc btn bằng thằng resum... set lại giá trị
                 btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));
+                btnPause.Enabled = true;
             }
             else
             {
@@ -194,11 +201,7 @@ namespace GameCaro
 
         }
 
-        private void btnRedo_Click(object sender, EventArgs e)
-        {
-            // TaoBanCo banc2o=new TaoBanCo();
-
-        }
+      
        
         private void time_label_Tick(object sender, EventArgs e)
         {  
@@ -259,11 +262,13 @@ namespace GameCaro
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
+            btnRedo.Enabled = true;
             undo();
             prcbTime.Value = 0;
             doiten();
             demUndo--;
-            if (demUndo == 0)
+            demRedo++;
+            if (demUndo < 1)
             {
                 btnUndo.Enabled = false;
             }
@@ -276,23 +281,42 @@ namespace GameCaro
                 pnlBanCo.Enabled = false;
                 btnPause.Text = "Resume";
                 Timer_Time.Stop();
-                btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));
+                btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));   
                 // temp = prcbTime.Value;
             }
             else
             if (btnPause.Text == "Resume")
             {
+                 
                 pnlBanCo.Enabled = true;
                 btnPause.Text = "Pause";
              //   prcbTime.Value = temp;
              if(kieuchoi=="Đếm giờ")
                   Timer_Time.Start();
                 btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\pause.png"));
+               
+                btnRedo.Enabled = true;
+                btnUndo.Enabled = true;
             };
            
         }
-
-    
+        void redo()
+        {
+            BanCo.redo();
+        }
+        private void btnRedo_Click_1(object sender, EventArgs e)
+        {
+            
+            redo();
+            prcbTime.Value = 0;
+            --demRedo;
+            demUndo++;
+            if(demRedo<1)
+            {
+                btnRedo.Enabled = false;
+            }
+            btnUndo.Enabled = true;
+        }
 
         private void btnSetName_Click_1(object sender, EventArgs e)
         {
