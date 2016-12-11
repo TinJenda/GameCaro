@@ -32,21 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainCaro));
             this.pnlBanCo = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.UserName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.prcbTime = new System.Windows.Forms.ProgressBar();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label_info = new System.Windows.Forms.Label();
-            this.user = new System.Windows.Forms.Label();
-            this.Timer_Time = new System.Windows.Forms.Timer(this.components);
-            this.time_label = new System.Windows.Forms.Timer(this.components);
             this.btnRedo = new System.Windows.Forms.Button();
+            this.UserName = new System.Windows.Forms.TextBox();
             this.btnSetName = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.prcbTime = new System.Windows.Forms.ProgressBar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label_info = new System.Windows.Forms.Label();
             this.userImage = new System.Windows.Forms.PictureBox();
+            this.user = new System.Windows.Forms.Label();
+            this.Timer_Time = new System.Windows.Forms.Timer(this.components);
+            this.time_label = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,71 +82,6 @@
             this.panel3.Size = new System.Drawing.Size(247, 259);
             this.panel3.TabIndex = 2;
             // 
-            // UserName
-            // 
-            this.UserName.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserName.Location = new System.Drawing.Point(60, 5);
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            this.UserName.Size = new System.Drawing.Size(99, 29);
-            this.UserName.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 27);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "NEXT";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // prcbTime
-            // 
-            this.prcbTime.Location = new System.Drawing.Point(8, 37);
-            this.prcbTime.Name = "prcbTime";
-            this.prcbTime.Size = new System.Drawing.Size(152, 23);
-            this.prcbTime.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label_info);
-            this.panel1.Location = new System.Drawing.Point(3, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(241, 56);
-            this.panel1.TabIndex = 3;
-            // 
-            // label_info
-            // 
-            this.label_info.Font = new System.Drawing.Font("UTM Caviar", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_info.Location = new System.Drawing.Point(1, 0);
-            this.label_info.Name = "label_info";
-            this.label_info.Size = new System.Drawing.Size(240, 53);
-            this.label_info.TabIndex = 10;
-            this.label_info.Text = "BÀI TẬP CUỐI KỲ\r\nCẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT\r\nGVHD: MAI TUẤN KHÔI\r\nSinh viên: " +
-    "Trương Thành Tín\r\nMSSV: 14110205";
-            this.label_info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // user
-            // 
-            this.user.AutoSize = true;
-            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.Location = new System.Drawing.Point(56, 9);
-            this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(0, 25);
-            this.user.TabIndex = 1;
-            // 
-            // Timer_Time
-            // 
-            this.Timer_Time.Tick += new System.EventHandler(this.Timer_Time_Tick);
-            // 
-            // time_label
-            // 
-            this.time_label.Enabled = true;
-            this.time_label.Tick += new System.EventHandler(this.time_label_Tick);
-            // 
             // btnRedo
             // 
             this.btnRedo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -163,6 +98,15 @@
             this.btnRedo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRedo.UseVisualStyleBackColor = false;
             this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click_1);
+            // 
+            // UserName
+            // 
+            this.UserName.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.Location = new System.Drawing.Point(60, 5);
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            this.UserName.Size = new System.Drawing.Size(99, 29);
+            this.UserName.TabIndex = 14;
             // 
             // btnSetName
             // 
@@ -198,6 +142,18 @@
             this.btnPause.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPause.UseVisualStyleBackColor = false;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(5, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 27);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "NEXT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnUndo
             // 
@@ -251,6 +207,32 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // prcbTime
+            // 
+            this.prcbTime.Location = new System.Drawing.Point(8, 37);
+            this.prcbTime.Name = "prcbTime";
+            this.prcbTime.Size = new System.Drawing.Size(152, 23);
+            this.prcbTime.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label_info);
+            this.panel1.Location = new System.Drawing.Point(3, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(241, 56);
+            this.panel1.TabIndex = 3;
+            // 
+            // label_info
+            // 
+            this.label_info.Font = new System.Drawing.Font("UTM Caviar", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_info.Location = new System.Drawing.Point(1, 0);
+            this.label_info.Name = "label_info";
+            this.label_info.Size = new System.Drawing.Size(240, 53);
+            this.label_info.TabIndex = 10;
+            this.label_info.Text = "BÀI TẬP CUỐI KỲ\r\nCẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT\r\nGVGD: MAI TUẤN KHÔI\r\nSinh viên: " +
+    "Trương Thành Tín\r\nMSSV: 14110205";
+            this.label_info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // userImage
             // 
             this.userImage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -260,6 +242,24 @@
             this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userImage.TabIndex = 2;
             this.userImage.TabStop = false;
+            // 
+            // user
+            // 
+            this.user.AutoSize = true;
+            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Location = new System.Drawing.Point(56, 9);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(0, 25);
+            this.user.TabIndex = 1;
+            // 
+            // Timer_Time
+            // 
+            this.Timer_Time.Tick += new System.EventHandler(this.Timer_Time_Tick);
+            // 
+            // time_label
+            // 
+            this.time_label.Enabled = true;
+            this.time_label.Tick += new System.EventHandler(this.time_label_Tick);
             // 
             // panel2
             // 

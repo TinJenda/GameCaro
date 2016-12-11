@@ -247,7 +247,12 @@ namespace GameCaro
                      btnPause_Click(null, null);
                     return true;
                 case (Keys.Control | Keys.Z):
-
+                    if (btnUndo.Enabled == true)
+                        btnUndo_Click(null, null);
+                    return true;
+                case (Keys.Control | Keys.R):
+                    if (btnRedo.Enabled == true)
+                        btnRedo_Click_1(null, null);
                     return true;
                 case (Keys.Control | Keys.O):
                     btnSetName_Click_1(null, null);
