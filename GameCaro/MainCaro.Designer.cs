@@ -33,16 +33,16 @@
             this.pnlBanCo = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.UserName = new System.Windows.Forms.TextBox();
+            this.btnSetName = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.prcbTime = new System.Windows.Forms.ProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_info = new System.Windows.Forms.Label();
             this.user = new System.Windows.Forms.Label();
             this.Timer_Time = new System.Windows.Forms.Timer(this.components);
             this.time_label = new System.Windows.Forms.Timer(this.components);
-            this.btnSetName = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.userImage = new System.Windows.Forms.PictureBox();
@@ -89,6 +89,24 @@
             this.UserName.Size = new System.Drawing.Size(99, 29);
             this.UserName.TabIndex = 14;
             // 
+            // btnSetName
+            // 
+            this.btnSetName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSetName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSetName.Font = new System.Drawing.Font("UTM Caviar", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetName.ForeColor = System.Drawing.Color.Maroon;
+            this.btnSetName.Image = global::GameCaro.Properties.Resources.options;
+            this.btnSetName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetName.ImageKey = "(none)";
+            this.btnSetName.Location = new System.Drawing.Point(8, 212);
+            this.btnSetName.Name = "btnSetName";
+            this.btnSetName.Size = new System.Drawing.Size(115, 36);
+            this.btnSetName.TabIndex = 13;
+            this.btnSetName.Text = "Option";
+            this.btnSetName.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnSetName.UseVisualStyleBackColor = false;
+            this.btnSetName.Click += new System.EventHandler(this.btnSetName_Click_1);
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Red;
@@ -100,6 +118,24 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "NEXT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnThoat.Font = new System.Drawing.Font("UTM Caviar", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Maroon;
+            this.btnThoat.Image = global::GameCaro.Properties.Resources.quit;
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.ImageKey = "(none)";
+            this.btnThoat.Location = new System.Drawing.Point(126, 212);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(115, 36);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Quit";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // prcbTime
             // 
@@ -145,24 +181,6 @@
             this.time_label.Enabled = true;
             this.time_label.Tick += new System.EventHandler(this.time_label_Tick);
             // 
-            // btnSetName
-            // 
-            this.btnSetName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSetName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSetName.Font = new System.Drawing.Font("UTM Caviar", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetName.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSetName.Image = global::GameCaro.Properties.Resources.options;
-            this.btnSetName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetName.ImageKey = "(none)";
-            this.btnSetName.Location = new System.Drawing.Point(8, 212);
-            this.btnSetName.Name = "btnSetName";
-            this.btnSetName.Size = new System.Drawing.Size(115, 36);
-            this.btnSetName.TabIndex = 13;
-            this.btnSetName.Text = "Option";
-            this.btnSetName.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnSetName.UseVisualStyleBackColor = false;
-            this.btnSetName.Click += new System.EventHandler(this.btnSetName_Click_1);
-            // 
             // btnPause
             // 
             this.btnPause.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -170,7 +188,7 @@
             this.btnPause.Enabled = false;
             this.btnPause.Font = new System.Drawing.Font("UTM Caviar", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.ForeColor = System.Drawing.Color.Maroon;
-            this.btnPause.Image = global::GameCaro.Properties.Resources.pause;
+            this.btnPause.Image = global::GameCaro.Properties.Resources.play;
             this.btnPause.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPause.ImageKey = "(none)";
             this.btnPause.Location = new System.Drawing.Point(126, 170);
@@ -181,24 +199,6 @@
             this.btnPause.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnPause.UseVisualStyleBackColor = false;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThoat.Font = new System.Drawing.Font("UTM Caviar", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.Maroon;
-            this.btnThoat.Image = global::GameCaro.Properties.Resources.quit;
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.ImageKey = "(none)";
-            this.btnThoat.Location = new System.Drawing.Point(126, 212);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(115, 36);
-            this.btnThoat.TabIndex = 5;
-            this.btnThoat.Text = "Quit";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnUndo
             // 

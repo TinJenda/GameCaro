@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
+    <None Include="Resources\play.png" />
     <None Include="Resources\undo %282%29.png" />
     <None Include="Resources\quit.png" />
     <None Include="Resources\options.png" />

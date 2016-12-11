@@ -37,20 +37,48 @@ namespace GameCaro
                 chonNguoiChoi = value;
             }
         }
+        private Stack<Point> lichsuchoi;//ham nay luu toa do, xu ly theo toa do 
+
+        public Stack<Point> Lichsuchoi
+        {
+            get
+            {
+                return lichsuchoi;
+            }
+
+            set
+            {
+                lichsuchoi = value;
+            }
+        }
         public TaoBanCo(Panel BanCo,PictureBox anh)
         {
             this.BanCo1 = BanCo;
             
             this.anh = anh;
-            this.Player = new List<Player>() //2 phayer, sẽ cải tiến nhập tên vào.
+            this.Player = new List<Player>() //2 phayer
             {
                 new Player(Image.FromFile(Application.StartupPath+"\\Resources\\x.png")),
                 new Player(Image.FromFile(Application.StartupPath+"\\Resources\\o.png"))
             }; //list player, ở đây 2 người.
-           
-            
-        }
 
+            lichsuchoi = new Stack<Point>();
+        }
+        public bool undo()
+        {
+            if(lichsuchoi.Count()!=0)
+            {
+            Point oldPoint = lichsuchoi.Pop(); //Gỡ bỏ và trả về đối tượng tại trên cùng của Stack
+            Button btn = matrix[oldPoint.X][oldPoint.Y];
+            btn.BackgroundImage = null;
+            chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
+            doiNguoiChoi();
+            }
+           
+           
+            return false;
+           
+        }
         public TaoBanCo()
         {
         }
@@ -133,8 +161,11 @@ namespace GameCaro
                 return;
 
             xetNguoiChoi(btn); //xem đó là người chơi nào, 1 hay 0
-            doiNguoiChoi(); //đổi người chơi, hiển thị ảnh, tên
-
+            chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
+            doiNguoiChoi(); //đổi người chơi <anh choi>
+           
+            lichsuchoi.Push(layToaDo(btn));
+          
             if (playerClickEvent != null)
             {
                 playerClickEvent(this, new EventArgs());
@@ -147,15 +178,13 @@ namespace GameCaro
         
         private void xetNguoiChoi(Button btn)
         {
-            btn.BackgroundImage = Player[chonNguoiChoi].Anh;
-            chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
+            btn.BackgroundImage = Player[chonNguoiChoi].Anh;   
         }
         private void doiNguoiChoi()
         {
             anh.Image = Player[chonNguoiChoi].Anh;
         }
-        #region xulythangthua //chạy tại tọa độ, đở tốn thuật toán.
-
+       
         private List<List<Button>> matrix; //tạo ma trận lưu thành mảng
 
       
@@ -173,10 +202,7 @@ namespace GameCaro
             }
         }
 
-        private bool kiemTraGame(Button btn) //mặc định là sai, kiểm tra game kthúc chưa
-        {
-            return kiemTraNgang(btn)||kiemTraDoc(btn) ||kiemTraCheoPhu(btn) ||kiemTraCheoChinh(btn);
-        }
+       
       
         private Point layToaDo(Button btn) //lấy tọa đó btn hiện tại
         {
@@ -184,6 +210,11 @@ namespace GameCaro
             int toaDoNgang = Matrix[toaDoDoc].IndexOf(btn); //lấy tọa độ btn nằm trong ma trận
             Point point = new Point(toaDoDoc,toaDoNgang);
             return point;
+        }
+        #region thangthua
+        private bool kiemTraGame(Button btn) //mặc định là sai, kiểm tra game kthúc chưa
+        {
+            return kiemTraNgang(btn) || kiemTraDoc(btn) || kiemTraCheoPhu(btn) || kiemTraCheoChinh(btn);
         }
         private bool kiemTraNgang(Button btn) //mặc định là sai, kiểm tra game kthúc chưa
         {

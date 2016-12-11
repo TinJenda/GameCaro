@@ -48,7 +48,7 @@ namespace GameCaro
             Timer_Time.Interval = LuuBien.INTERVAL; //số lần để sự kiện timer nhãy
             NewGame();
         }
-        int dem = 0;
+        int dem = 0, demUndo = 0;
         private void EndGame()
         { 
             Timer_Time.Stop();
@@ -80,9 +80,16 @@ namespace GameCaro
             pnlBanCo.Enabled = false;
             dem = 0;
 
-        }   
-        private void BanCo_PlayerClickEvent(object sender, EventArgs e)
+        }
+       
+
+        void undo()
         {
+            BanCo.undo();
+        }
+        private void BanCo_PlayerClickEvent(object sender, EventArgs e) //sự kiện bàn cờ có người click /rất hay
+        {
+           
             if (kieuchoi == "Không đếm giờ")
             {
                 Timer_Time.Stop();
@@ -93,6 +100,12 @@ namespace GameCaro
             }
             prcbTime.Value = 0;
             dem++;
+            demUndo++;
+            doiten();
+            btnUndo.Enabled = true;
+        }
+        void doiten()
+        {
             if (UserName.Text == user1)
             {
                 UserName.Text = user2;
@@ -102,10 +115,10 @@ namespace GameCaro
                 UserName.Text = user1;
             }
         }
-
         private void BanCo_KetThucGameEvent(object sender, EventArgs e)
         {
             EndGame();
+            btnUndo.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -113,7 +126,7 @@ namespace GameCaro
             pnlBanCo.Enabled = false;
             userImage.Visible = false;
             btnPause.Enabled = false;
-      
+            btnUndo.Enabled = false;
         }
 
         private void Timer_Time_Tick(object sender, EventArgs e)
@@ -129,22 +142,26 @@ namespace GameCaro
         {
             Application.Exit();
         }
-
-        void NewGame()
+        void nguoiChondau()
         {
-            if(userfirst== "User 1")
+            if (userfirst == "User 1")
             {
                 UserName.Text = user1;
             }
             else
             {
                 UserName.Text = user2;
-            }    
+            }
+        }
+        void NewGame()
+        {
+            nguoiChondau();
             prcbTime.Value = 0;
             Timer_Time.Stop();
             BanCo.veBanCo();
             btnPause.Enabled = true;
             userImage.Visible = true;
+
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -154,11 +171,13 @@ namespace GameCaro
                 NewGame();
                 prcbTime.Maximum = Int32.Parse(muc) * 1000;
                 btnPause.Text = "Pause"; //khi kích vào có thể đang lúc btn bằng thằng resum... set lại giá trị
+                btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));
             }
             else
             {
                 NewGame();
                 btnPause.Text = "Pause";
+                btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));
                 btnPause.Enabled = false;
             }
         }
@@ -240,7 +259,14 @@ namespace GameCaro
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-
+            undo();
+            prcbTime.Value = 0;
+            doiten();
+            demUndo--;
+            if (demUndo == 0)
+            {
+                btnUndo.Enabled = false;
+            }
         }
 
         private void btnPause_Click(object sender, EventArgs e)
