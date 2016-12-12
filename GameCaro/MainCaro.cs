@@ -53,7 +53,9 @@ namespace GameCaro
         { 
             Timer_Time.Stop();
             btnPause.Enabled = false;
-            if(UserName.Text==user1)
+            btnRedo.Enabled = false;
+            btnUndo.Enabled = false;
+            if (UserName.Text==user1)
             {
                 userWin = user2;
             }
@@ -78,6 +80,7 @@ namespace GameCaro
             //    dem = 0;
             // }
             pnlBanCo.Enabled = false;
+       
             dem = 0;
             demUndo = 0;
             demRedo = 0;
@@ -168,6 +171,7 @@ namespace GameCaro
             btnRedo.Enabled = false;
             demRedo = 0;
             demUndo = 0;
+            dem = 0;
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -175,7 +179,7 @@ namespace GameCaro
             if(kieuchoi=="Đếm giờ")
             {
                 NewGame();
-                prcbTime.Maximum = Int32.Parse(muc) * 1000;
+                prcbTime.Maximum = (Int32.Parse(muc)) * 1000;
                 btnPause.Text = "Pause"; //khi kích vào có thể đang lúc btn bằng thằng resum... set lại giá trị
                 btnPause.Image = (Image.FromFile(Application.StartupPath + "\\Resources\\play.png"));
                 btnPause.Enabled = true;
