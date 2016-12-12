@@ -309,10 +309,13 @@ namespace GameCaro
         {
             BanCo.redo();
         }
+
+    
+
         private void btnRedo_Click_1(object sender, EventArgs e)
         {
-            
             redo();
+            doiten();
             prcbTime.Value = 0;
             --demRedo;
             demUndo++;

@@ -43,10 +43,10 @@
             this.prcbTime = new System.Windows.Forms.ProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_info = new System.Windows.Forms.Label();
+            this.userImage = new System.Windows.Forms.PictureBox();
             this.user = new System.Windows.Forms.Label();
             this.Timer_Time = new System.Windows.Forms.Timer(this.components);
             this.time_label = new System.Windows.Forms.Timer(this.components);
-            this.userImage = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,6 +55,9 @@
             // 
             // pnlBanCo
             // 
+            this.pnlBanCo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBanCo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnlBanCo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBanCo.Location = new System.Drawing.Point(265, 12);
@@ -233,6 +236,16 @@
     "Trương Thành Tín\r\nMSSV: 14110205";
             this.label_info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // userImage
+            // 
+            this.userImage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.userImage.Location = new System.Drawing.Point(166, 3);
+            this.userImage.Name = "userImage";
+            this.userImage.Size = new System.Drawing.Size(75, 60);
+            this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userImage.TabIndex = 2;
+            this.userImage.TabStop = false;
+            // 
             // user
             // 
             this.user.AutoSize = true;
@@ -250,16 +263,6 @@
             // 
             this.time_label.Enabled = true;
             this.time_label.Tick += new System.EventHandler(this.time_label_Tick);
-            // 
-            // userImage
-            // 
-            this.userImage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.userImage.Location = new System.Drawing.Point(166, 3);
-            this.userImage.Name = "userImage";
-            this.userImage.Size = new System.Drawing.Size(75, 60);
-            this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userImage.TabIndex = 2;
-            this.userImage.TabStop = false;
             // 
             // panel2
             // 

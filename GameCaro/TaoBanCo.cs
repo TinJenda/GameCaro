@@ -65,7 +65,6 @@ namespace GameCaro
                 new Player(Image.FromFile(Application.StartupPath+"\\Resources\\x.png")),
                 new Player(Image.FromFile(Application.StartupPath+"\\Resources\\o.png"))
             }; //list player, ở đây 2 người.
-
             lichsuchoi = new Stack<Point>();
             taoredo = new Stack<Point>();
         }
@@ -80,10 +79,7 @@ namespace GameCaro
             chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
             doiNguoiChoi();
             }
-           
-           
-            return false;
-           
+              return false;   
         }
         public bool redo()
         {
@@ -91,10 +87,10 @@ namespace GameCaro
             {  
             Point poinredo = taoredo.Pop();
             Button btn = matrix[poinredo.X][poinredo.Y];
-            doiNguoiChoi();
-            xetNguoiChoi(btn);
             lichsuchoi.Push(layToaDo(btn));
+            xetNguoiChoi(btn);
             chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
+            doiNguoiChoi();
             }
             return false;
         }
@@ -179,7 +175,7 @@ namespace GameCaro
             if (btn.BackgroundImage != null)
                 return;
 
-            xetNguoiChoi(btn); //xem đó là người chơi nào, 1 hay 0
+            xetNguoiChoi(btn); //xem dang danh la hinh j
             chonNguoiChoi = chonNguoiChoi == 1 ? 0 : 1; //xem lại
             doiNguoiChoi(); //đổi người chơi <anh choi>
             lichsuchoi.Push(layToaDo(btn));
@@ -194,11 +190,11 @@ namespace GameCaro
             }  
         }
         
-        private void xetNguoiChoi(Button btn)
+        private void xetNguoiChoi(Button btn) //btn nguoi choi
         {
             btn.BackgroundImage = Player[chonNguoiChoi].Anh;   
         }
-        private void doiNguoiChoi()
+        private void doiNguoiChoi() //anh nguoi choi
         {
             anh.Image = Player[chonNguoiChoi].Anh;
         }
