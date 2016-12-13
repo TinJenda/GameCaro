@@ -55,7 +55,7 @@ namespace GameCaro
             }
         }
         #endregion
-        public TaoBanCo(Panel BanCo,PictureBox anh)
+        public TaoBanCo(Panel BanCo,PictureBox anh) //ve tren pane
         {
             this.BanCo1 = BanCo;
             
@@ -81,6 +81,18 @@ namespace GameCaro
             }
               return false;   
         }
+        //int chonnguoichoi()
+        //{
+        //    if(chonNguoiChoi==1)
+        //    {
+        //        chonNguoiChoi = 0; 
+        //    }
+        //    else
+        //    {
+        //        chonNguoiChoi = 1;
+        //    }
+        //    return chonNguoiChoi;
+        //}
         public bool redo()
         {
             if(taoredo.Count()!=0)
@@ -149,7 +161,7 @@ namespace GameCaro
                         Location = new Point(btnFirst.Location.X + btnFirst.Width,
                         btnFirst.Location.Y),
                         BackgroundImageLayout = ImageLayout.Stretch,
-                        Tag = i.ToString() //lưu text xuốg dòng
+                        Tag = i.ToString() //lưu text truoc xuốg dòng sau lay' i=> doc de hon
                     };
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = Color.GhostWhite;

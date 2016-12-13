@@ -168,6 +168,7 @@ namespace GameCaro
             BanCo.veBanCo(); 
             userImage.Visible = true;
             btnUndo.Enabled = false;
+            btnNewGame.Enabled = true;
             btnRedo.Enabled = false;
             demRedo = 0;
             demUndo = 0;
